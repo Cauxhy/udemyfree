@@ -1,0 +1,170 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Home | UdemyfreeBy</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=DynaPuff:wght@400..700&family=Gabarito:wght@400..900&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<header>
+    <nav class="bg-white shadow">
+        <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+            <div class="relative flex items-center justify-between h-16">
+                <!-- Menu icon for mobile -->
+                <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                    <button id="menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-900 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-gray-500">
+                        <span class="sr-only">Ouvrir le menu</span>
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+                    <div class="flex-shrink-0">
+                        <a href="/">
+                            <div class="flex items-center justify-center">
+                                <img src="{% static 'images/Udemy.png' %}" alt="Udemy Logo" class="h-16">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- Navigation for larger screens -->
+                <div class="hidden sm:flex sm:gap-x-6">
+                    <a href="" class="text-sm font-semibold leading-6 text-gray-900">Accueil</a>
+                    <a href="/courses" class="text-sm font-semibold leading-6 text-gray-900">Courses</a>
+                    <a href="/how-to-use" class="text-sm font-semibold leading-6  text-gray-900">How to Use</a>
+                </div>
+                <!-- Contact Us aligned to the right -->
+                <div class="hidden sm:flex sm:flex-1 sm:justify-end">
+                    <a href="/how-to-use#contact" class="text-sm font-semibold leading-6 text-gray-900">Contacte us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile menu, hidden by default -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white  z-50 hidden">
+        <div class="flex items-center justify-between">
+            <a href="#" class="-m-1.5 p-1.5 ml-5">
+              <span class="sr-only">Your Company</span>
+              <img class="h-16 w-auto" src="{% static 'images/Udemy.png' %}" alt="">
+            </a>
+            <button id="close-button" class="-m-2.5 rounded-md p-2.5 text-gray-700 mr-5">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="mt-6 flow-root">
+          <div class="-my-6 divide-y ">
+            <div class="space-y-2 py-6">
+              <a href="/" class="-mx-3 ml-5 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Accueil</a>
+              <a href="/courses" class="-mx-3 ml-5 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Courses</a>
+              <a href="/how-to-use" class="-mx-3 ml-5 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">How to Use</a>
+            </div>
+            <div class="py-6 ">
+              <a href="/how-to-use#contact" class="-mx-3 ml-5 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">contact us</a>
+            </div>
+          </div>
+    </div>
+</header>
+
+<div class="bg-white max-w-7xl mx-auto p-6">
+  <!-- Breadcrumb Navigation -->
+  <nav aria-label="Breadcrumb" class="mb-4">
+    <ol role="list" class="flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+      <li>
+        <div class="flex items-center">
+          <a href="/courses" class="mr-2 text-sm font-medium text-gray-900">Courses</a>
+          <svg width="16" height="20" viewBox="0 0 16 20" fill="currentColor" aria-hidden="true" class="h-5 w-4 text-gray-300">
+            <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
+          </svg>
+        </div>
+      </li>
+      <li>
+        <div class="flex items-center">
+          <a href="http://127.0.0.1:8000/courses?search=&category={{ product.category.id }}" class="mr-2 text-sm font-medium text-gray-900">{{product.category}}</a>
+          <svg width="16" height="20" viewBox="0 0 16 20" fill="currentColor" aria-hidden="true" class="h-5 w-4 text-gray-300">
+            <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
+          </svg>
+        </div>
+      </li>
+      <li class="text-sm">
+        <a href="#" aria-current="page" class="font-medium text-gray-500 hover:text-gray-600">{{ product.title }}</a>
+      </li>
+    </ol>
+  </nav>
+
+  <!-- Course Title -->
+  <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+    <a href="/product/{{ product.id }}" class="hover:underline">{{ product.title }}</a>
+  </h1>
+
+  <!-- Product Information -->
+  <div class="mt-6 grid gap-8 lg:grid-cols-2 lg:pt-8 mb-20">
+    <!-- Left Section: Image and Info -->
+    <div>
+      <div class="mt-4 mb-4">
+        <img src="{{ product.image_url }}" alt="{{ product.title }}" class="w-48 h-auto rounded-lg">
+      </div>
+      <p class="text-gray-700">
+        <span class="text-[#F71735]">Category: </span>
+        <a href="http://127.0.0.1:8000/courses?search=&category=4" class="text-indigo-600 hover:underline">{{product.category}}</a>
+      </p>
+      <p class="mt-2 text-gray-700">Language: {{ product.languages }}</p>
+      <p class="mt-2 text-gray-700">{{ product.description | truncatechars:150 }}</p>
+    </div>
+
+    <!-- Right Section: Pricing and Button -->
+    <div class="mb-5">
+      <p class="text-lg font-medium text-gray-900 line-through">Old Price: {{ product.old_price }}</p>
+      <p class="text-3xl tracking-tight text-red-500">New Price: Free</p>
+      <a href="{{ product.free_code_url }}" class="mt-4 inline-block w-full text-center px-6 py-2 border border-transparent text-base font-medium rounded-md text-white bg-[#FF9F1C] hover:bg-indigo-700">Buy Course</a>
+      <p class="mt-2 text-sm text-gray-500">Not sure how to use? <a href="/how-to-use" class="text-indigo-600 hover:text-indigo-700">Click here for instructions</a>.</p>
+    </div>
+  </div>
+  <h2 class="text-xl font-bold mb-4 text-center style primary">Cours Aléatoires</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      {% for course in random_courses %}
+          <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+              <a href="{% url 'product_detail' course.id %}" class="text-lg font-semibold text-[#41EAD4] hover:underline">{{ course.title }}</a>
+              <img src="{{ course.image_url }}" alt="{{ course.title }}" class="w-full h-32 object-cover rounded mt-2">
+              <span class="mt-2 text-lg font-bold text-green-500">
+                  {% if course.new_price > 0 %}
+                      {{ course.new_price }} € à Gratuit
+                  {% else %}
+                      Gratuit
+                  {% endif %}
+              </span>
+          </div>
+      {% endfor %}
+  </div>
+
+</div>
+<footer class="bg-[#011627] text-white py-4">
+  <div class="container mx-auto flex items-center justify-between px-4">
+      <a href="/">
+        <img src="{% static 'images/Udemy (1).png' %}" alt="Logo" class="h-8" />
+      </a>
+      
+      <div class="flex-1 text-center">
+          <a href="/courses" class="text-sm hover:underline mx-2">Courses</a>
+      </div>
+
+      <p class="text-sm">© 2024 <span class="style text-[#ff9f1c]">Cauxhy</span>, Inc. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
+

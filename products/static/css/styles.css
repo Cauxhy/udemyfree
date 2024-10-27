@@ -1,0 +1,54 @@
+.menu-enter {
+  transform: translateX(-100%);
+}
+.menu-enter-active {
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+}
+.menu-exit {
+  transform: translateX(0);
+}
+.menu-exit-active {
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+.primary{
+  color: #FF9F1C;
+}
+.hover-animate {
+  background-size: 200% 100%;
+  transition: background-position 0.5s ease;
+  background-image: linear-gradient(to right, #FF9F1C 50%, #F71735 50%);
+}
+
+.hover-animate:hover {
+  background-position: -100% 0;
+}
+.style{
+  font-family: "DynaPuff", system-ui;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+.style2{
+  font-family: "DynaPuff", system-ui;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 50;
+}
+.text-custom-red {
+  color: #F71735;
+}
+
+.bg-custom-red {
+  background-color: #F71735;
+}
+
+.text-custom-orange {
+  color: #FF9F1C;
+}
+
+.hover\:bg-custom-orange:hover {
+  background-color: #FF9F1C;
+}

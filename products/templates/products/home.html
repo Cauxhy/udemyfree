@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Home | UdemyfreeBy</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=DynaPuff:wght@400..700&family=Gabarito:wght@400..900&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body class="bg-white">
+<header>
+    <nav class="bg-white shadow">
+        <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+            <div class="relative flex items-center justify-between h-16">
+                <!-- Menu icon for mobile -->
+                <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                    <button id="menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-900 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-gray-500">
+                        <span class="sr-only">Ouvrir le menu</span>
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+                    <div class="flex-shrink-0">
+                        <a href="/">
+                            <div class="flex items-center justify-center">
+                                <img src="{% static 'images/Udemy.png' %}" alt="Udemy Logo" class="h-16">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- Navigation for larger screens -->
+                <div class="hidden sm:flex sm:gap-x-6">
+                    <a href="" class="text-sm font-semibold leading-6 primary">Accueil</a>
+                    <a href="/courses" class="text-sm font-semibold leading-6 text-gray-900">Courses</a>
+                    <a href="how-to-use" class="text-sm font-semibold leading-6 text-gray-900">How to Use</a>
+                </div>
+                <!-- Contact Us aligned to the right -->
+                <div class="hidden sm:flex sm:flex-1 sm:justify-end">
+                    <a href="/how-to-use#contact" class="text-sm font-semibold leading-6 text-gray-900">Contacte us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile menu, hidden by default -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white  z-50 hidden">
+        <div class="flex items-center justify-between">
+            <a href="#" class="-m-1.5 p-1.5 ml-5">
+              <span class="sr-only">Your Company</span>
+              <img class="h-16 w-auto" src="{% static 'images/Udemy.png' %}" alt="">
+            </a>
+            <button id="close-button" class="-m-2.5 rounded-md p-2.5 text-gray-700 mr-5">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="mt-6 flow-root">
+          <div class="-my-6 divide-y ">
+            <div class="space-y-2 py-6">
+              <a href="/" class="-mx-3 ml-5 block rounded-lg px-3 py-2 text-base font-semibold leading-7 primary style hover:bg-gray-50">Accueil</a>
+              <a href="/courses" class="-mx-3 ml-5 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Courses</a>
+              <a href="/how-to-use" class="-mx-3 ml-5 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">How to Use</a>
+            </div>
+            <div class="py-6 ">
+              <a href="/how-to-use#contact" class="-mx-3 ml-5 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">contact us</a>
+            </div>
+          </div>
+    </div>
+</header>
+
+<div class="bg-white py-12 sm:py-16">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-4xl lg:text-center bg-white p-6 rounded-lg shadow-lg">
+      <h2 class="text-3xl font-bold leading-tight text-[#FF9F1C] style">Accédez à des cours Udemy Premium sans frais</h2>
+      <p class="mt-4 text-lg leading-7 text-gray-600 style2">
+          Découvrez une vaste sélection de comptes Udemy gratuits pour apprendre ce que vous voulez, quand vous le voulez. Profitez d'une éducation de qualité et améliorez vos compétences dans divers domaines.
+      </p>
+    </div>
+  
+
+    <div class="mt-16">
+      <div class="grid grid-cols-1 gap-y-8 sm:grid-cols-2 sm:gap-x-16 sm:gap-y-10 lg:gap-y-16">
+        <div class="relative p-6 bg-gray-50 rounded-lg border-l-4 border-[#F71735] shadow-lg">
+          <h3 class="text-lg font-semibold leading-6 text-gray-900">Accès aux cours premium</h3>
+          <p class="mt-2 text-base leading-6 text-gray-600">Profitez de l'accès illimité aux cours Udemy payants sans avoir à dépenser une fortune. Apprenez à votre rythme.</p>
+        </div>
+
+        <div class="relative p-6 bg-gray-50 rounded-lg border-l-4 border-[#FF9F1C] shadow-lg">
+          <h3 class="text-lg font-semibold leading-6 text-gray-900">Sécurisé et fiable</h3>
+          <p class="mt-2 text-base leading-6 text-gray-600">Nos comptes sont vérifiés pour garantir une expérience d'apprentissage sécurisée et fiable.</p>
+        </div>
+
+        <div class="relative p-6 bg-gray-50 rounded-lg border-l-4 border-[#011627] shadow-lg">
+          <h3 class="text-lg font-semibold leading-6 text-gray-900">Mises à jour régulières</h3>
+          <p class="mt-2 text-base leading-6 text-gray-600">Nos comptes sont mis à jour régulièrement pour garantir l'accès aux derniers cours disponibles.</p>
+        </div>
+
+        <div class="relative p-6 bg-gray-50 rounded-lg border-l-4 border-[#41EAD4] shadow-lg">
+          <h3 class="text-lg font-semibold leading-6 text-gray-900">Support client 24/7</h3>
+          <p class="mt-2 text-base leading-6 text-gray-600">Profitez d'une assistance 24h/24 et 7j/7 pour répondre à toutes vos questions et résoudre vos problèmes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="text-center bg-white mb-5">
+  <div class="mt-10 flex items-center justify-center gap-x-6">
+    <a href="/courses" class="rounded-md bg-[#FF9F1C] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#F71735] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F71735]">
+        Get Courses
+    </a>
+    <a href="#" class="text-sm font-semibold leading-6 text-[#011627] hover:text-[#FF9F1C] transition-colors duration-300">
+      Contact Us <span aria-hidden="true">→</span>
+  </a>
+   
+</div>
+</div>
+<footer class="bg-[#011627] text-white py-4">
+  <div class="container mx-auto flex items-center justify-between px-4">
+      <a href="/">
+        <img src="{% static 'images/Udemy (1).png' %}" alt="Logo" class="h-8" />
+      </a>
+      
+      <div class="flex-1 text-center">
+          <a href="/courses" class="text-sm hover:underline mx-2">Courses</a>
+      </div>
+
+      <p class="text-sm">© 2024 <span class="style text-[#ff9f1c]">Cauxhy</span>, Inc. All rights reserved.</p>
+  </div>
+</footer>
+
+
+<script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

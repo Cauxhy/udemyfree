@@ -1,0 +1,20 @@
+{
+  "devDependencies": {
+    "tailwindcss": "^3.4.14"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.20",
+    "bootstrap-icons": "^1.11.3",
+    "postcss-cli": "^11.0.0"
+  },
+  "name": "udemy_courses_project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
