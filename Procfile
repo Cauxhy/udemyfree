@@ -1,1 +1,1 @@
-web: gunicorn udemy_courses_project.wsgi
+web: gunicorn udemy_courses_project.wsgi --log-file -
